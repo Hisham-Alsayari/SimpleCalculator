@@ -10,30 +10,30 @@ private:
     string _LastOperation = "Clear";
     float _PreviousResult = 0;
 
-    bool _IsZero(float Number) {
-        // «ﬂ » „‰ÿﬁ «· Õﬁﬁ „‰ «·’›— Â‰«
+    bool _IsZero(float Number)
+    {
         return (Number == 0);
     }
 
 public:
-    void Add(float Number) {
-        // «ﬂ » „‰ÿﬁ «·Ã„⁄ Â‰«
+    void Add(float Number) 
+    {
         _LastNumber = Number;
         _PreviousResult = _Result;
         _LastOperation = "Adding";
         _Result += Number;
     }
 
-    void Subtract(float Number) {
-        // «ﬂ » „‰ÿﬁ «·ÿ—Õ Â‰«
+    void Subtract(float Number)
+    {
         _LastNumber = Number;
         _PreviousResult = _Result;
         _LastOperation = "Subtracting";
         _Result -= Number;
     }
 
-    void Divide(float Number) {
-        // «ﬂ » „‰ÿﬁ «·ﬁ”„… Â‰«
+    void Divide(float Number)
+    {
         _LastNumber = Number;
         if (_IsZero(Number))
             Number = 1;
@@ -42,40 +42,39 @@ public:
         _Result /= Number;
     }
 
-    void Multiply(float Number) {
-        // «ﬂ » „‰ÿﬁ «·÷—» Â‰«
+    void Multiply(float Number) 
+    {
         _LastNumber = Number;
         _PreviousResult = _Result;
         _LastOperation = "Multiplying";
         _Result *= Number;
     }
 
-    float GetFinalResults() {
-        // «—Ã⁄ «·‰ ÌÃ… «·‰Â«∆Ì… Â‰«
+    float GetFinalResults() 
+    {
         return _Result;
     }
 
-    void Clear() {
-        // «ﬂ » „‰ÿﬁ «· ’›Ì… (Reset) Â‰«
+    void Clear() 
+    {
         _LastNumber = 0;
         _PreviousResult = 0;
         _LastOperation = "Clear";
         _Result = 0;
     }
 
-    void CancelLastOperation() {
-        // «ﬂ » „‰ÿﬁ ≈·€«¡ ¬Œ— ⁄„·Ì… Â‰«
+    void CancelLastOperation() 
+    {
         _LastNumber = 0;
         _LastOperation = "Cancel Last Operation";
         _Result = _PreviousResult;
     }
 
-    void PrintResult() {
-        // «ﬂ » „‰ÿﬁ ÿ»«⁄… «·‰ ÌÃ… Â‰«
+    void PrintResult() 
+    {
         cout << "Result ";
         cout << "After " << _LastOperation
              << " " << _LastNumber << " is: " << _Result << "\n";
-
     }
 };
 
